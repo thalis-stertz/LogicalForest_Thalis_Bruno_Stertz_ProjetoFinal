@@ -1,5 +1,5 @@
 {
-    "baseUrl": "http://serverest.dev",
+    "baseUrl": "https://serverest.dev",
     "env": {
         "global_timeout": 30000,
         "environment": "PROD"
