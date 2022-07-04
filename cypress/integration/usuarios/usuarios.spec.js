@@ -25,7 +25,7 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
         })
     })
 
-    it.only('Deve realizar login com sucesso', () => {
+    it('Deve realizar login com sucesso', () => {
         cy.buscarUsuarioParaLogin().then( usuario => {
             cy.logar(usuario.email, usuario.senha).then( res => {
                 expect(res).to.be.a('object')
@@ -35,6 +35,6 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
                 cy.log(bearer)
             })
         })
-
+        
     })
 })
