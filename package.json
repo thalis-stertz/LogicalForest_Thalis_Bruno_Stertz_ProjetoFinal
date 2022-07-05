@@ -14,6 +14,7 @@
   "author": "Thalis Bruno Stertz",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
     "cypress": "^8.7.0"
   }
 }
