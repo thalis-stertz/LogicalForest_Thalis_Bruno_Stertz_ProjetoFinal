@@ -4,10 +4,12 @@ import Serverest from '../services/serverest.service'
 import ValidaServerest from '../services/validaServerest.service'
 import Factory from '../fixtures/factory'
 
+
 describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
 
-    it('Deve buscar todos os usuarios cadastrados na Serverest', () => {
+    it.only('Deve buscar todos os usuarios cadastrados na Serverest', () => {
         Serverest.buscarUsuarios().then( res => {
+            cy.contractValidation(res, 'get-usuarios', 200)
             ValidaServerest.validarBuscaDeUsuarios(res)
         })
     })

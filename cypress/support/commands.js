@@ -27,6 +27,26 @@
 // const cypress = require("cypress")
 // const { method } = require("cypress/types/bluebird")
 
+import Ajv from 'ajv'
+const ajv = new Ajv({allErrors: true, verbose: true, strict: false})
+
+Cypress.Commands.add('contractValidation', (res, schema, status) => {
+    cy.log('Validando contrato para' + schema + ' com status ' + status)
+    cy.fixture(`schema/${schema}/${status}.json`).then( schema => {
+        const validate = ajv.compile(schema)
+        const valid = validate(res.body)
+
+        if(!valid){
+            var errors = ''
+            for(let each in validate.errors){
+                let err = validate.errors[each]
+                errors += `\n${err.instacePath} ${err.message}, but received ${typeof err.data}`
+            }
+            throw new Error('Erros encontrados na vilidação de contrato, por favor verifique: ' + errors)
+        }
+    })
+})
+
 Cypress.Commands.add('postarUsuarioSemSucesso', () => {
     return cy.request({
         method: 'POST',
