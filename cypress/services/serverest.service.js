@@ -28,12 +28,44 @@ export default class Serverest {
         })
     }
 
+    static criarUsuarioComSucesso(){
+        let usuario = Factory.gerarUsuario()
+
+        return cy.request({
+            method: 'POST',
+            url: URL_USUARIOS,
+            body: usuario,
+            failOnStatusCode: true,
+        })
+    }
+
+    static salvarId(resposta){
+        Cypress.env('idUser', resposta.body._id)
+    }
+
+
     static logar(usuario) {
         return cy.rest('POST', URL_LOGIN, usuario)
     }
 
     static salvarBearer(resposta){
         Cypress.env('bearer', resposta.body.authorization.slice(7))
+    }
+
+    static localizarUsuarioComSucesso(){
+        cy.request({
+            method: 'GET',
+            url: /usuarios/`${Cypress.env("idUser")}`,
+            failOnStatusCode: true
+        })
+    }
+
+    static deletarUsuarioComSucesso(){
+        cy.request({
+            method: 'DELETE',
+            url: /usuarios/`${Cypress.env("idUser")}`,
+            failOnStatusCode: true
+        })
     }
 
     // Produtos //
@@ -55,5 +87,9 @@ export default class Serverest {
             }
         })
     }
+
+    // Carrinhos //
+
+
 
 }

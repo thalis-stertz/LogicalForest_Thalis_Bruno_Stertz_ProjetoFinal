@@ -14,4 +14,13 @@ export default class Factory {
     static gerarInteiroAleatorio(){
         return faker.datatype.number(13)
     }
+
+    static gerarUsuario(){
+        return {
+            "nome": faker.internet.userName(),
+            "email": faker.internet.email(),
+            "password": faker.internet.password(),
+            "administrador": 'true'
+        }
+    }
 }

@@ -1,7 +1,7 @@
 {
-  "nome": "Guilherme",
-  "email": "guigguedes08@gmail.com",
-  "password": "S3rv3r",
-  "administrador": "false",
-  "_id": "GfUHI7yq2ARN8PFg"
+  "nome": "Fulano da Silva",
+  "email": "beltrano@teste.com.br",
+  "password": "teste",
+  "administrador": "true",
+  "_id": "J5WTmUQhNnWuni6F"
 }

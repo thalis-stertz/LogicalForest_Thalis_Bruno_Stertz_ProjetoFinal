@@ -9,12 +9,17 @@ export default class ValidaServerest {
     // Usuario/login //
 
     static validarBuscaDeUsuarios(resposta){
-        expect(resposta.body.quantidade).to.be.greaterThan(4)
+        expect(resposta.body.quantidade).to.be.greaterThan(0)
+    }
+
+    static validarCriacaoDeUsuario(resposta){
+        expect(resposta).to.be.a('object')
+        expect(resposta.body.message).to.be.a('string')
+        expect(resposta.body.message).to.be.eq('Cadastro realizado com sucesso')
+        expect(resposta.body).to.haveOwnProperty('_id')
     }
 
     static validarLoginComSucesso(resposta){
-        expect(resposta).to.be.a('object')
-        expect(resposta.body.message).to.be.a('string')
         expect(resposta.body).to.haveOwnProperty('authorization')
     }
 

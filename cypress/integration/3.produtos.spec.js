@@ -16,6 +16,7 @@ describe('Casos de teste sobre a rota /produtos da API Serverest', () => {
             Serverest.buscarUsuarioParaLogin()
         cy.get('@usuarioLogin').then( usuario => {
             Serverest.logar(usuario).then( res => {
+                cy.contractValidation(res, 'post-login', 200)
                 ValidaServerest.validarLoginComSucesso(res)
                 Serverest.salvarBearer(res)
             })
