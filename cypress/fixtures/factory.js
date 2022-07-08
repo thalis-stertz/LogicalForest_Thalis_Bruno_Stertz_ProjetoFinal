@@ -23,4 +23,5 @@ export default class Factory {
             "administrador": 'true'
         }
     }
+
 }

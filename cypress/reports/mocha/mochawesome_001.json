@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-07T18:20:54.745Z",
-    "end": "2022-07-07T18:20:55.146Z",
-    "duration": 401,
+    "start": "2022-07-08T19:16:11.913Z",
+    "end": "2022-07-08T19:16:12.397Z",
+    "duration": 484,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0effa2d3-e44d-4828-bf8e-2218bf123b9c",
+      "uuid": "92322a05-1f42-48c1-8154-6ae57af2457f",
       "title": "",
       "fullFile": "cypress/integration/2.login.spec.js",
       "file": "cypress/integration/2.login.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "62a06bd1-a720-475e-b724-ce505980eb0e",
+          "uuid": "6f875852-d54a-4852-bb42-517f7a26a952",
           "title": "Casos de teste sobre a rota /login da API Serverest",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve realizar login com sucesso",
               "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar login com sucesso",
               "timedOut": null,
-              "duration": 311,
+              "duration": 438,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "_serverest.default.buscarUsuarioParaLogin();\ncy.get('@usuarioLogin').then(usuario => {\n  _serverest.default.logar(usuario).then(res => {\n    cy.contractValidation(res, 'post-login', 200);\n    _validaServerest.default.validarLoginComSucesso(res);\n    _serverest.default.salvarBearer(res);\n  });\n});",
               "err": {},
-              "uuid": "f4931198-1992-43d5-9cc4-a105a9270a92",
-              "parentUUID": "62a06bd1-a720-475e-b724-ce505980eb0e",
+              "uuid": "19f686f2-0bd1-44b1-8e25-5064822894f3",
+              "parentUUID": "6f875852-d54a-4852-bb42-517f7a26a952",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f4931198-1992-43d5-9cc4-a105a9270a92"
+            "19f686f2-0bd1-44b1-8e25-5064822894f3"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 311,
+          "duration": 438,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

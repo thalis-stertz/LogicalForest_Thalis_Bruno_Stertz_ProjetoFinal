@@ -39,7 +39,7 @@ export default class Serverest {
         })
     }
 
-    static salvarId(resposta){
+    static salvarIdUsuario(resposta){
         Cypress.env('idUser', resposta.body._id)
     }
 
@@ -52,18 +52,18 @@ export default class Serverest {
         Cypress.env('bearer', resposta.body.authorization.slice(7))
     }
 
-    static localizarUsuarioComSucesso(){
-        cy.request({
+    static buscarUsuarioComSucesso(){
+        return cy.request({
             method: 'GET',
-            url: /usuarios/`${Cypress.env("idUser")}`,
+            url: `/usuarios/${Cypress.env("idUser")}`,
             failOnStatusCode: true
         })
     }
 
     static deletarUsuarioComSucesso(){
-        cy.request({
+        return cy.request({
             method: 'DELETE',
-            url: /usuarios/`${Cypress.env("idUser")}`,
+            url: `/usuarios/${Cypress.env("idmacaco")}`,
             failOnStatusCode: true
         })
     }
@@ -88,8 +88,83 @@ export default class Serverest {
         })
     }
 
+    static salvarIdProduto(resposta){
+        Cypress.env('idProduto', resposta.body._id)
+    }
+
+    static localizarProdutoComSucesso(){
+        return cy.request({
+            method: 'GET',
+            url: `/produtos/${Cypress.env("idProduto")}`,
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
+
+    static deletarProdutoComSucesso(){
+        return cy.request({
+            method: 'DELETE',
+            url: `/produtos/${Cypress.env("idProduto")}`,
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
+
     // Carrinhos //
 
+    static buscarCarrinhos(){
+        return cy.rest('GET', URL_CARRINHOS)
+    }
 
+    static buscarProdutoParaCarrinho(){
+        cy.request(URL_PRODUTOS).then( res => {
+            Cypress.env('produtoCarrinho', res.body.produtos[0]._id)
+        })
+    }
+
+    static cadastrarCarrinhoComSucesso(){
+        return cy.request({
+            method: 'POST',
+            url: URL_CARRINHOS,
+            body: {
+                "produtos": [
+                  {
+                    "idProduto": `${Cypress.env("produtoCarrinho")}`,
+                    "quantidade": 1
+                  }
+                ]
+              },
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
+
+    static cancelarCompra(){
+        return cy.request({
+            method: 'DELETE',
+            url: "carrinhos/cancelar-compra",
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
+
+    static finalizarCompra(){
+        return cy.request({
+            method: 'DELETE',
+            url: "carrinhos/concluir-compra",
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
 
 }

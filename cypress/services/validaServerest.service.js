@@ -40,4 +40,23 @@ export default class ValidaServerest {
         expect(resposta.body).to.haveOwnProperty('_id')
     }
 
+    static validarlocalizarProdutoComSucesso(resposta){
+        expect(resposta).to.be.a('object')
+        expect(resposta.body.message).to.be.a('string')
+        expect(resposta.body).to.haveOwnProperty('_id')
+    }
+
+    static validarExcluirProdutoComSucesso(resposta){
+        expect(resposta).to.be.a('object')
+        expect(resposta.body.message).to.be.a('string')
+        expect(resposta.body.message).to.be.eq('Registro excluído com sucesso | Nenhum registro excluído')
+        expect(resposta.body).to.haveOwnProperty('_id')
+    }
+
+        // Carrinhos //
+
+    static validarBuscaDeCarrinhos(resposta){
+        expect(resposta.body.quantidade).to.be.greaterThan(0)
+    }
+
 }

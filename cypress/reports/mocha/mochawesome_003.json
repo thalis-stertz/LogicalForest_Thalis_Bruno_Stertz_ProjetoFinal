@@ -1,23 +1,158 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-07T18:21:20.818Z",
-    "end": "2022-07-07T18:21:20.852Z",
-    "duration": 34,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2022-07-08T19:16:28.720Z",
+    "end": "2022-07-08T19:16:29.230Z",
+    "duration": 510,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "34ae99eb-b191-4460-8ca1-a86a3b6bd0ff",
+      "title": "",
+      "fullFile": "cypress/integration/4.carrinhos.spec.js",
+      "file": "cypress/integration/4.carrinhos.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bd0fd984-08cc-4fc7-9645-2742ec5e3632",
+          "title": "Casos de teste sobre a rota /carrinhos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve buscar todos os carrinhos cadastrados",
+              "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Deve buscar todos os carrinhos cadastrados",
+              "timedOut": null,
+              "duration": 76,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.buscarCarrinhos().then(res => {\n  _validaServerest.default.validarBuscaDeCarrinhos(res);\n});",
+              "err": {},
+              "uuid": "983e4529-d8cd-4d83-958d-e53829ff31ae",
+              "parentUUID": "bd0fd984-08cc-4fc7-9645-2742ec5e3632",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "112d3dcc-e7de-4586-896b-a665ca864614",
+              "title": "Logar com sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve excluir carrinho se existir",
+                  "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Logar com sucesso Deve excluir carrinho se existir",
+                  "timedOut": null,
+                  "duration": 167,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cancelarCompra().then(res => {\n  cy.contractValidation(res, 'delete-carrinhos', 200);\n});",
+                  "err": {},
+                  "uuid": "74a9f671-3239-46d8-a0d5-647725111503",
+                  "parentUUID": "112d3dcc-e7de-4586-896b-a665ca864614",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve postar um novo carrinho com sucesso",
+                  "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Logar com sucesso Deve postar um novo carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 100,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarCarrinhoComSucesso().then(res => {\n  cy.contractValidation(res, 'post-carrinhos', 201);\n});",
+                  "err": {},
+                  "uuid": "03c92c92-cee0-487b-ae20-5b85ce843c4c",
+                  "parentUUID": "112d3dcc-e7de-4586-896b-a665ca864614",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve concluir compra",
+                  "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Logar com sucesso Deve concluir compra",
+                  "timedOut": null,
+                  "duration": 124,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.finalizarCompra().then(res => {\n  cy.contractValidation(res, 'delete-carrinhos', 200);\n});",
+                  "err": {},
+                  "uuid": "e1a620c5-5eec-423a-be32-8620b5a7bb3f",
+                  "parentUUID": "112d3dcc-e7de-4586-896b-a665ca864614",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "74a9f671-3239-46d8-a0d5-647725111503",
+                "03c92c92-cee0-487b-ae20-5b85ce843c4c",
+                "e1a620c5-5eec-423a-be32-8620b5a7bb3f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 391,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "983e4529-d8cd-4d83-958d-e53829ff31ae"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 76,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {

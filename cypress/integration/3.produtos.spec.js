@@ -21,13 +21,28 @@ describe('Casos de teste sobre a rota /produtos da API Serverest', () => {
                 Serverest.salvarBearer(res)
             })
         })
-        })  
+    })  
 
-        it('Deve postar um novo produto com sucesso', () => {
+    it('Deve postar um novo produto com sucesso', () => {
             Serverest.cadastrarProdutoComSucesso().then( res => {
-                ValidaServerest.validarCadastroDeProdutoComSucesso(res)
+                cy.contractValidation(res, 'post-produtos', 201)
+                Serverest.salvarIdProduto(res)
+            })
+        })
+        
+    it('Deve buscar produto por ID', () => {
+            Serverest.localizarProdutoComSucesso().then( res => {
+                cy.contractValidation(res, 'get-produtos-by-id', 200)
+            })
+        })
+
+    it('Deve excluir produto com sucesso', () => {
+            Serverest.deletarProdutoComSucesso().then( res => {
+                cy.contractValidation(res, 'delete-produtos-by-id', 200)
             })
         })
     })
+
+        
 
 })
