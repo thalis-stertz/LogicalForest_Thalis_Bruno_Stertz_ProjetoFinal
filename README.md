@@ -4,11 +4,6 @@
 # Serve Rest
 
 
-## Mapeamento da API
-### Os itens colocados a direita são os de maior prioridade.
-<img src="../Sprint%205/Images/ServeRest.png" alt="ServeRest" style="width:800px;"/>
-
-
 ## Requisitos: 
 > - Conta no Git Hub
 > - Visual Code
