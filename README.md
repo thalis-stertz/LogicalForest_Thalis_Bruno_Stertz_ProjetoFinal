@@ -4,9 +4,18 @@
 # Serve Rest
 
 
-## Plano de teste
-O plano de teste e o relatório de testes, bem como os anexos estão disponíveis em: https://drive.google.com/drive/u/3/folders/1jN4FyNV6_DyIcpVfPazvhh5MvoKJ0fGo
+## Documentação da API 
+> Disponível em: https://serverest.dev/#/
 
+
+## Documentação do Plano de teste
+O plano de teste e o relatório de testes, bem como os anexos estão disponíveis na pasta Plano de teste.
+
+
+> - Plano de test/ServeRerst - Plano de Testes.pdf
+> - Plano de test/ServeRest - PLano de Testes.pdf
+> - Plano de test/ServeRest - estrategia de testes.png
+> - Plano de test/Serve Rest.png
 
 
 ## Requisitos: 
