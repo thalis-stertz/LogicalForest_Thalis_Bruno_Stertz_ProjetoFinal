@@ -1,7 +1,12 @@
-### Logical Forest - Sprint 5
+### Logical Forest - Projeto Final
 
 
 # Serve Rest
+
+
+## Plano de teste
+O plano de teste e o relatório de testes, bem como os anexos estão disponíveis em: https://drive.google.com/drive/u/3/folders/1jN4FyNV6_DyIcpVfPazvhh5MvoKJ0fGo
+
 
 
 ## Requisitos: 

@@ -23,6 +23,12 @@ export default class ValidaServerest {
         expect(resposta.body).to.haveOwnProperty('authorization')
     }
 
+    static validarLoginSemSucesso(resposta){
+        expect(resposta).to.be.a('object')
+        expect(resposta.body.message).to.be.a('string')
+        expect(resposta.body.message).to.be.eq('Email e/ou senha inválidos')
+    }
+
     // Produtos //
 
     static validarBuscaDeProdutos(resposta){

@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-26T12:45:07.312Z",
+    "end": "2022-07-26T12:45:07.869Z",
+    "duration": 557,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "32ea969a-f26b-4200-819e-a3d80f8eb971",
+      "title": "",
+      "fullFile": "cypress/integration/6.usuario.negativo.spec.js",
+      "file": "cypress/integration/6.usuario.negativo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d2a59c16-4052-40e3-aeec-51a0da4edc00",
+          "title": "Casos de teste negativos sobre a rota /usuarios",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTFN02 - Deve falhar em cadastrar um novo usuário com um email que já está sendo utilizado",
+              "fullTitle": "Casos de teste negativos sobre a rota /usuarios CTFN02 - Deve falhar em cadastrar um novo usuário com um email que já está sendo utilizado",
+              "timedOut": null,
+              "duration": 169,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.buscarEmailDeUsuario();\ncy.get('@usuarioEmail').then(email => {\n  _serverestNegativo.default.criarUsuarioSemSucesso(email.email).then(res => {\n    cy.contractValidation(res, 'post-usuarios', 400);\n    expect(res.body.message).to.be.eq('Este email já está sendo usado');\n  });\n});",
+              "err": {},
+              "uuid": "3f3e75f3-d58f-4288-ab74-750f718f9570",
+              "parentUUID": "d2a59c16-4052-40e3-aeec-51a0da4edc00",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTFN03 - Deve falhar ao tentar encontrar um usuário pelo ID",
+              "fullTitle": "Casos de teste negativos sobre a rota /usuarios CTFN03 - Deve falhar ao tentar encontrar um usuário pelo ID",
+              "timedOut": null,
+              "duration": 35,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.buscarUsuarioSemSucesso().then(res => {\n  cy.contractValidation(res, 'get-usuarios-by-id', 400);\n  expect(res.body.message).to.be.eq('Usuário não encontrado');\n});",
+              "err": {},
+              "uuid": "28528ea7-26e0-4d9a-9468-098ac0dc08f0",
+              "parentUUID": "d2a59c16-4052-40e3-aeec-51a0da4edc00",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTFN05 - Deve falhar em editar um usuário",
+              "fullTitle": "Casos de teste negativos sobre a rota /usuarios CTFN05 - Deve falhar em editar um usuário",
+              "timedOut": null,
+              "duration": 46,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.buscarEmailDeUsuario();\ncy.get('@usuarioEmail').then(email => {\n  _serverestNegativo.default.editarUsuarioSemSucesso(email.email).then(res => {\n    cy.contractValidation(res, 'put-usuarios-by-id', 400);\n    expect(res.body.message).to.be.eq('Este email já está sendo usado');\n  });\n});",
+              "err": {},
+              "uuid": "e2a93e00-9063-42f6-a91d-3eda61cdf5db",
+              "parentUUID": "d2a59c16-4052-40e3-aeec-51a0da4edc00",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "007c8cae-9ada-47b1-aa87-cd65830e0a2f",
+              "title": "Falhar ao excluir um usuário com carrinho",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve excluir carrinho se existir",
+                  "fullTitle": "Casos de teste negativos sobre a rota /usuarios Falhar ao excluir um usuário com carrinho Deve excluir carrinho se existir",
+                  "timedOut": null,
+                  "duration": 85,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cancelarCompra().then(res => {\n  cy.contractValidation(res, 'delete-carrinhos', 200);\n});",
+                  "err": {},
+                  "uuid": "70ab49c6-0998-49a8-a560-80cd7bb62ed2",
+                  "parentUUID": "007c8cae-9ada-47b1-aa87-cd65830e0a2f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve postar um novo carrinho com sucesso",
+                  "fullTitle": "Casos de teste negativos sobre a rota /usuarios Falhar ao excluir um usuário com carrinho Deve postar um novo carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 79,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarCarrinhoComSucesso().then(res => {\n  cy.contractValidation(res, 'post-carrinhos', 201);\n});",
+                  "err": {},
+                  "uuid": "6917a188-3cb2-4d84-b9dc-55c721a8ece2",
+                  "parentUUID": "007c8cae-9ada-47b1-aa87-cd65830e0a2f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTFN04 - Deve falhar ao tentar excluir um usuário com carrinho cadastrado",
+                  "fullTitle": "Casos de teste negativos sobre a rota /usuarios Falhar ao excluir um usuário com carrinho CTFN04 - Deve falhar ao tentar excluir um usuário com carrinho cadastrado",
+                  "timedOut": null,
+                  "duration": 71,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegativo.default.deletarUsuarioSemSucesso().then(res => {\n  cy.contractValidation(res, 'delete-usuarios-by-id', 400);\n  expect(res.body.message).to.be.eq('Não é permitido excluir usuário com carrinho cadastrado');\n});",
+                  "err": {},
+                  "uuid": "b0673df5-b7db-4e74-bf2f-7f7b7c5b6d74",
+                  "parentUUID": "007c8cae-9ada-47b1-aa87-cd65830e0a2f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "70ab49c6-0998-49a8-a560-80cd7bb62ed2",
+                "6917a188-3cb2-4d84-b9dc-55c721a8ece2",
+                "b0673df5-b7db-4e74-bf2f-7f7b7c5b6d74"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 235,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "3f3e75f3-d58f-4288-ab74-750f718f9570",
+            "28528ea7-26e0-4d9a-9468-098ac0dc08f0",
+            "e2a93e00-9063-42f6-a91d-3eda61cdf5db"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 250,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

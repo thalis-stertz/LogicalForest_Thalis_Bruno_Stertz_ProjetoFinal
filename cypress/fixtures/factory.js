@@ -24,4 +24,35 @@ export default class Factory {
         }
     }
 
+    static editarUsuario(){
+        return {
+            "nome": faker.internet.userName(),
+            "email": faker.internet.email(),
+            "password": faker.internet.password(),
+            "administrador": 'true'
+        }
+    }
+
+    static editarProduto(){
+        return {
+                "nome": faker.commerce.productName(),
+                "preco": faker.datatype.number(),
+                "descricao": faker.commerce.productDescription(),
+                "quantidade": faker.datatype.number()
+        }
+    }
+    
+    static gerarUsuarioParaLogin(){
+        return {
+            "email": faker.internet.email(),
+            "password": faker.internet.password(),
+        }
+    }
+
+    static produtoIdGerar(){
+        return faker.random.numeric(16)
+    }
+
+    
+
 }

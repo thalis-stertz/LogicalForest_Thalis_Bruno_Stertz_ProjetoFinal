@@ -1,5 +1,5 @@
 import Factory from  "../fixtures/factory"
-
+import { faker } from '@faker-js/faker';
 
 const URL_USUARIOS  = '/usuarios'
 const URL_LOGIN     = '/login'
@@ -25,11 +25,13 @@ export default class Serverest {
                 email: res.body.usuarios[0].email,
                 password: res.body.usuarios[0].password
             }).as('usuarioLogin')
+            Cypress.env('idUser', res.body.usuarios[0]._id)
         })
     }
 
     static criarUsuarioComSucesso(){
         let usuario = Factory.gerarUsuario()
+        Cypress.env('EmailUser', usuario.email)
 
         return cy.request({
             method: 'POST',
@@ -43,13 +45,12 @@ export default class Serverest {
         Cypress.env('idUser', resposta.body._id)
     }
 
+    static salvarEmailUsuario(resposta){
+        Cypress.env('EmailUser', resposta.body.email)
+    }
 
     static logar(usuario) {
         return cy.rest('POST', URL_LOGIN, usuario)
-    }
-
-    static salvarBearer(resposta){
-        Cypress.env('bearer', resposta.body.authorization.slice(7))
     }
 
     static buscarUsuarioComSucesso(){
@@ -68,7 +69,25 @@ export default class Serverest {
         })
     }
 
+    static editarUsuario(){
+        return cy.request({
+            method: 'PUT',
+            url: `/usuarios/${Cypress.env("idUser")}`,
+            body: {
+                "nome": faker.internet.userName(),
+                "email": faker.internet.email(),
+                "password": faker.internet.password(),
+                "administrador": 'true'
+            },
+            failOnStatusCode: true,
+        })
+    }
+
     // Produtos //
+
+    static salvarBearer(resposta){
+        Cypress.env('bearer', resposta.body.authorization.slice(7))
+    }
 
     static buscarProdutos(){
         return cy.rest('GET', URL_PRODUTOS)
@@ -114,6 +133,23 @@ export default class Serverest {
         })
     }
 
+    static salvarNomeDoProduto(resposta){
+        Cypress.env('ProductName', resposta.body.nome)
+    }
+
+    static editarProduto(){
+        let produto = Factory.editarProduto()
+        return cy.request({
+            method: 'PUT',
+            url: `/produtos/${Cypress.env("idProduto")}`,
+            body: produto, 
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
+
     // Carrinhos //
 
     static buscarCarrinhos(){
@@ -138,6 +174,21 @@ export default class Serverest {
                   }
                 ]
               },
+            failOnStatusCode: true,
+            auth: {
+                bearer: Cypress.env("bearer")
+            }
+        })
+    }
+
+    static salvarIdCarrinho(resposta){
+        Cypress.env('idCarrinho', resposta.body._id)
+    }
+
+    static localizarCarrinhoComSucesso(){
+        return cy.request({
+            method: 'GET',
+            url: `/carrinhos/${Cypress.env("idCarrinho")}`,
             failOnStatusCode: true,
             auth: {
                 bearer: Cypress.env("bearer")

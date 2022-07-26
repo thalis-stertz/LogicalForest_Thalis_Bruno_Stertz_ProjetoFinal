@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-26T12:45:14.060Z",
+    "end": "2022-07-26T12:45:14.516Z",
+    "duration": 456,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "80bc8fe2-caa6-46c2-b3f0-afd77683ebe3",
+      "title": "",
+      "fullFile": "cypress/integration/7.produtos.negativo.spec.js",
+      "file": "cypress/integration/7.produtos.negativo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b1ab739a-fc42-4ddc-8959-f99ad1efd824",
+          "title": "Casos de teste negativos sobre a rota /produtos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTFN07 - Deve falhar ao tentar cadastrar um produto devido a ausência do Token de acesso",
+              "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest CTFN07 - Deve falhar ao tentar cadastrar um produto devido a ausência do Token de acesso",
+              "timedOut": null,
+              "duration": 231,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.cadastrarProdutoSemToken().then(res => {\n  cy.contractValidation(res, 'post-produtos', 401);\n  expect(res.body.message).to.be.equal('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+              "err": {},
+              "uuid": "1303c370-508b-4760-add7-f5512d5de310",
+              "parentUUID": "b1ab739a-fc42-4ddc-8959-f99ad1efd824",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTFN11 - Não deve excluir produto devido a falta de Token de acesso",
+              "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest CTFN11 - Não deve excluir produto devido a falta de Token de acesso",
+              "timedOut": null,
+              "duration": 46,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.deletarProdutoSemToken().then(res => {\n  cy.contractValidation(res, 'delete-produtos-by-id', 401);\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+              "err": {},
+              "uuid": "90e3b973-951e-4b70-ba21-dfc6eda0f253",
+              "parentUUID": "b1ab739a-fc42-4ddc-8959-f99ad1efd824",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTFN14 - Não deve editar produto devido a falta de Token de acesso",
+              "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest CTFN14 - Não deve editar produto devido a falta de Token de acesso",
+              "timedOut": null,
+              "duration": 39,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.editarProdutoSemToken().then(res => {\n  cy.contractValidation(res, 'put-produtos-by-id', 401);\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+              "err": {},
+              "uuid": "35bb3739-29b6-40be-ae4a-5a2745f2801a",
+              "parentUUID": "b1ab739a-fc42-4ddc-8959-f99ad1efd824",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "5e5bccff-eee2-45e6-8fd8-83409ba96c26",
+              "title": "Deve falhar em encontrar produto",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "CTFN09 - Não deve encontrar o produto",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Deve falhar em encontrar produto CTFN09 - Não deve encontrar o produto",
+                  "timedOut": null,
+                  "duration": 98,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegativo.default.localizarProdutoSemSucesso().then(res => {\n  cy.contractValidation(res, 'get-produtos-by-id', 400);\n  expect(res.body.message).to.be.eq('Produto não encontrado');\n});",
+                  "err": {},
+                  "uuid": "ad516fb3-bf2f-4192-8b0c-5759f5df5589",
+                  "parentUUID": "5e5bccff-eee2-45e6-8fd8-83409ba96c26",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ad516fb3-bf2f-4192-8b0c-5759f5df5589"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 98,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "1303c370-508b-4760-add7-f5512d5de310",
+            "90e3b973-951e-4b70-ba21-dfc6eda0f253",
+            "35bb3739-29b6-40be-ae4a-5a2745f2801a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 316,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

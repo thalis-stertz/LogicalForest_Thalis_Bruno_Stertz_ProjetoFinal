@@ -1,0 +1,242 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-26T12:45:20.820Z",
+    "end": "2022-07-26T12:45:21.628Z",
+    "duration": 808,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "30a39652-8576-492d-bd14-e5de91eb5c1c",
+      "title": "",
+      "fullFile": "cypress/integration/8.carrinhos.negativo.spec.js",
+      "file": "cypress/integration/8.carrinhos.negativo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "39c7ec91-0ab4-4d51-9dc8-bdb8574d7f06",
+          "title": "Casos de teste negativos sobre a rota /carrinhos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTFN17 - Deve falhar ao tentar cadastrar carrinho devido a ausência do Token de acesso",
+              "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest CTFN17 - Deve falhar ao tentar cadastrar carrinho devido a ausência do Token de acesso",
+              "timedOut": null,
+              "duration": 116,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegativo.default.cadastrarCarrinhoSemSucessoSemToken().then(res => {\n  expect(res.status).to.be.eq(401);\n  cy.contractValidation(res, 'post-carrinhos', 401);\n});",
+              "err": {},
+              "uuid": "5bd87ffd-a88d-4e94-b4b1-760507669697",
+              "parentUUID": "39c7ec91-0ab4-4d51-9dc8-bdb8574d7f06",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+              "title": "Logar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "CTFN16 - Deve falhar ao tentar cadastrar carrinho com outro carrinho já cadastrado",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar CTFN16 - Deve falhar ao tentar cadastrar carrinho com outro carrinho já cadastrado",
+                  "timedOut": null,
+                  "duration": 97,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegativo.default.cadastrarCarrinhoSemSucesso().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidation(res, 'post-carrinhos', 400);\n});",
+                  "err": {},
+                  "uuid": "98641021-23c8-4359-a92e-d1968b46550b",
+                  "parentUUID": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve excluir carrinho se existir",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar Deve excluir carrinho se existir",
+                  "timedOut": null,
+                  "duration": 113,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cancelarCompra().then(res => {\n  cy.contractValidation(res, 'delete-carrinhos', 200);\n});",
+                  "err": {},
+                  "uuid": "3e96ccef-3ff7-4c9c-8f34-7e86579e535d",
+                  "parentUUID": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve postar um novo carrinho com sucesso",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar Deve postar um novo carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 102,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarCarrinhoComSucesso().then(res => {\n  cy.contractValidation(res, 'post-carrinhos', 201);\n});",
+                  "err": {},
+                  "uuid": "9f549661-025a-41d0-98b6-78c041922300",
+                  "parentUUID": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTFN18 - Deve falhar ao buscar carrinho pelo ID",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar CTFN18 - Deve falhar ao buscar carrinho pelo ID",
+                  "timedOut": null,
+                  "duration": 130,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegativo.default.localizarCarrinhoSemSucesso().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidation(res, 'get-carrinhos-by-id', 400);\n  expect(res.body.message).to.be.eq('Carrinho não encontrado');\n});",
+                  "err": {},
+                  "uuid": "e842cd72-f558-4fe8-a609-7acbf53423a0",
+                  "parentUUID": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTFN19 - Deve falhar em concluir compra",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar CTFN19 - Deve falhar em concluir compra",
+                  "timedOut": null,
+                  "duration": 82,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegativo.default.naoFinalizarCompra().then(res => {\n  expect(res.status).to.be.eq(401);\n  cy.contractValidation(res, 'delete-carrinhos', 401);\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+                  "err": {},
+                  "uuid": "6c7a4019-b9fe-48bc-b1c1-e53c2f7039fa",
+                  "parentUUID": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTFN20 - Deve falhar em cancelar a compra e retornar os produtos para o estoque",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar CTFN20 - Deve falhar em cancelar a compra e retornar os produtos para o estoque",
+                  "timedOut": null,
+                  "duration": 75,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegativo.default.naoCancelarCompra().then(res => {\n  expect(res.status).to.be.eq(401);\n  cy.contractValidation(res, 'delete-carrinhos-cancelar', 401);\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+                  "err": {},
+                  "uuid": "f94564e8-7e95-40b3-8baf-1b7cceb8b04c",
+                  "parentUUID": "7e788c86-df7f-4ecb-bbab-3c268b82b6f5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "98641021-23c8-4359-a92e-d1968b46550b",
+                "3e96ccef-3ff7-4c9c-8f34-7e86579e535d",
+                "9f549661-025a-41d0-98b6-78c041922300",
+                "e842cd72-f558-4fe8-a609-7acbf53423a0",
+                "6c7a4019-b9fe-48bc-b1c1-e53c2f7039fa",
+                "f94564e8-7e95-40b3-8baf-1b7cceb8b04c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 599,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "5bd87ffd-a88d-4e94-b4b1-760507669697"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 116,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
